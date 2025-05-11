@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSphere</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="w-full min-h-screen bg-gray-100 p-4">
+        <header>
+            <div style="display: flex; align-items: center; width: 100%;">
+                <div class="logo">
+                    <img src="final_logo.png" alt="SkillSphere Logo" class="logo-img" style="margin-right: 5px;">
+                    <span style="margin-left: 0;">SkillSphere</span>
+                </div>
+                <input type="text" placeholder="What skills you want to learn?" class="search-bar" onclick="window.location.href='serch.html'" style="margin-left: 40px;">
+                <div class="profile" style="display: flex; align-items: center; gap: 20px; margin-left: 40px;">
+                    <span class="icon" onclick="window.location.href='notification.html'" style="font-size: 20px;">🔔</span>
+                    <span class="icon" onclick="window.location.href='mail.html'" style="font-size: 20px;">📧</span>
+                    <span class="icon" onclick="window.location.href='fav.html'" style="font-size: 20px;">❤️</span>
+                    <span class="icon" onclick="window.location.href='main.html'" style="font-size: 20px;">🏠</span>
+                    <span class="user-icon" onclick="window.location.href='profile.html'" style="font-size: 20px;">👤</span>
+                </div>
+            </div>
+        </header>
+    
+        <nav style="border: 1px solid #ccc; padding: 10px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center;">
+          <button onclick="window.location.href='test.html'" style="background-color: #99ccd8; border-radius: 25px; border: none; padding: 8px 16px;">Skills Test Platform</button>
+          <button onclick="window.location.href='video.html'" style="background-color: #99ccd8; border-radius: 25px; border: none; padding: 8px 16px;">Upload Video</button>
+          <button onclick="window.location.href='resume.html'" style="background-color: #99ccd8; border-radius: 25px; border: none; padding: 8px 16px;">AI Resume Optimizer</button>
+          <button onclick="window.location.href='consult.html'" style="background-color: #99ccd8; border-radius: 25px; border: none; padding: 8px 16px;">Consulting</button>
+          <button onclick="window.location.href='userprofile.html'" style="background-color: #99ccd8; border-radius: 25px; border: none; padding: 8px 16px;">Find User</button>
+        </nav>
+
+        <!-- User Profile Section -->
+        <div class="mt-6 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-lg font-semibold mb-4">User Profile (For other people see derr)</h2>
+            <div class="border p-4 rounded-lg">
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">👤</div>
+                    <p class="mt-2 font-semibold">Name <button class="ml-2 text-sm text-gray-500">Edit</button></p>
+                </div>
+                <div class="mt-4">
+                    <p class="font-semibold">Skill Label</p>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="bg-blue-300 px-4 py-1 rounded-md">Skill 1</span>
+                        <span class="bg-blue-300 px-4 py-1 rounded-md">Skill 2</span>
+                        <span class="bg-blue-300 px-4 py-1 rounded-md">Skill 3</span>
+                        <span class="bg-blue-300 px-4 py-1 rounded-md">Skill 4</span>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <p class="font-semibold">Bio</p>
+                    <div class="border p-2 mt-2 rounded-md h-16"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

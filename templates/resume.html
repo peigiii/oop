@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dynamic Resume Generator</title>
+<style>
+    /* Reset styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    /* Form container */
+    .form-container {
+      max-width: 1000px;
+      margin: 0 auto 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .form-container h2 {
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #34495e;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .form-group textarea {
+      resize: vertical;
+    }
+    .btn {
+      display: inline-block;
+      background: #28a745;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 10px;
+    }
+    .btn:hover {
+      background: #218838;
+    }
+    /* Resume preview container */
+    .resume-container {
+      max-width: 1000px;
+      margin: 20px auto;
+      background: #fff;
+      display: flex;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: none; /* Hidden by default */
+    }
+    /* Left column */
+    .left-column {
+      width: 35%;
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: url('https://via.placeholder.com/150') no-repeat center;
+      background-size: cover;
+      margin-bottom: 20px;
+      border: 5px solid #fff;
+    }
+    .left-section {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .left-section h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      border-bottom: 1px solid #ecf0f1;
+      padding-bottom: 5px;
+    }
+    .left-section p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    /* Right column */
+    .right-column {
+      width: 65%;
+      padding: 40px 30px;
+      color: #34495e;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    .header h2 {
+      font-size: 20px;
+      color: #7f8c8d;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .section-title {
+      font-size: 20px;
+      border-bottom: 2px solid #bdc3c7;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      color: #2c3e50;
+    }
+    .item {
+      margin-bottom: 15px;
+    }
+    .item h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #2c3e50;
+    }
+    .item .date {
+      font-size: 14px;
+      color: #7f8c8d;
+      margin-bottom: 5px;
+    }
+    .item p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .skill {
+      background: #ecf0f1;
+      color: #2c3e50;
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+  </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js">
+    document.getElementById('downloadBtn').addEventListener('click', function () {
+      const element = document.getElementById('resumePreview');
+      const opt = {
+        margin:       0,
+        filename:     'resume.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+    
+document.getElementById('downloadBtn').addEventListener('click', function () {
+  const resume = document.getElementById('resumePreview');
+  resume.style.display = 'flex';
+
+  const img = document.getElementById('profileImg');
+  const nameInput = document.getElementById("name").value.trim().replace(/\s+/g, "-");
+  const filename = nameInput ? nameInput + "-Resume.pdf" : "resume.pdf";
+
+  function exportToPDF() {
+    html2canvas(resume).then(canvas => {
+      const imgData = canvas.toDataURL("image/png");
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF("p", "pt", "a4");
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const ratio = canvas.width / canvas.height;
+      const pdfHeight = pageWidth / ratio;
+      pdf.addImage(imgData, "PNG", 0, 0, pageWidth, pdfHeight);
+      pdf.save(filename);
+    }).catch(err => {
+      alert("导出 PDF 时出错：" + err.message);
+    });
+  }
+
+  if (img && !img.complete) {
+    img.onload = exportToPDF;
+    img.onerror = () => alert("头像图片加载失败，请更换其他文件名或使用 JPG/PNG 格式图片");
+  } else {
+    exportToPDF();
+  }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script></head>
+<body>
+<!-- Form Input Area -->
+<div class="form-container">
+<h2>Enter Your Resume Information</h2>
+<div class="form-group">
+<label for="name">Name</label>
+<input id="name" placeholder="e.g. Jane Smith" type="text"/>
+</div>
+<div class="form-group">
+<label for="position">Position Applied</label>
+<input id="position" placeholder="e.g. Digital Content Marketer" type="text"/>
+</div>
+<div class="form-group">
+<label for="address">Address</label>
+<textarea id="address" placeholder="e.g. 123 Main St, City, State 12345"></textarea>
+</div>
+<div class="form-group">
+<label for="phone">Phone Number</label>
+<input id="phone" placeholder="e.g. +1 234 567 890" type="text"/>
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input id="email" placeholder="e.g. email@example.com" type="email"/>
+</div>
+<div class="form-group">
+<label for="reference">Reference</label>
+<textarea id="reference" placeholder="e.g. John Doe, Manager at Company, +1 987 654 321, john.doe@company.com"></textarea>
+</div>
+<div class="form-group">
+<label for="workExp">Work Experience (one entry per line; format: Company | Period | Description)</label>
+<textarea id="workExp" placeholder="e.g. Vengeance Inc. | 2015 - 2016 | Lorem ipsum dolor sit amet"></textarea>
+</div>
+<div class="form-group">
+<label for="education">Education (one entry per line; format: School | Period | Degree/Description)</label>
+<textarea id="education" placeholder="e.g. Ryerson University, Toronto | 2014 - 2016 | Bachelor of Arts in Communication"></textarea>
+</div>
+<div class="form-group">
+<label for="skills">Skills (comma-separated)</label>
+<input id="skills" placeholder="e.g. Content Strategy, SEO, Social Media" type="text"/>
+</div>
+<div class="form-group">
+<label for="profilePicInput">Upload Profile Picture</label>
+<input accept="image/*" id="profilePicInput" type="file"/>
+</div>
+<button class="btn" id="generateBtn">Generate Resume</button>
+<button class="btn" id="downloadBtn" style="background:#007bff;">Download PDF</button>
+</div>
+<!-- Resume Preview Area -->
+<div class="resume-container" id="resumePreview">
+<!-- Left Column -->
+<div class="left-column">
+<div class="profile-pic" id="profilePic"><img id="profileImg" src="https://via.placeholder.com/150" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;"/></div>
+<!-- Contact Info -->
+<div class="left-section">
+<h3>Contact Info</h3>
+<p id="previewAddress"></p>
+<p id="previewPhone"></p>
+<p id="previewEmail"></p>
+</div>
+<!-- Reference -->
+<div class="left-section">
+<h3>Reference</h3>
+<p id="previewReference"></p>
+</div>
+</div>
+<!-- Right Column -->
+<div class="right-column">
+<div class="header">
+<h1 id="previewName"></h1>
+<h2 id="previewPosition"></h2>
+</div>
+<!-- Work Experience -->
+<div class="section">
+<div class="section-title">Work Experience</div>
+<div id="previewWorkExp"></div>
+</div>
+<!-- Education -->
+<div class="section">
+<div class="section-title">Education</div>
+<div id="previewEducation"></div>
+</div>
+<!-- Skills -->
+<div class="section">
+<div class="section-title">Skills</div>
+<div class="skills" id="previewSkills"></div>
+</div>
+</div>
+</div>
+<script>
+    // Handle profile picture upload
+    document.getElementById('profilePicInput').addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          document.getElementById('profileImg').src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Generate Resume Preview
+    document.getElementById('generateBtn').addEventListener('click', function() {
+      // Retrieve form input values
+      const name = document.getElementById('name').value;
+      const position = document.getElementById('position').value;
+      const address = document.getElementById('address').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const reference = document.getElementById('reference').value;
+      const workExp = document.getElementById('workExp').value;
+      const education = document.getElementById('education').value;
+      const skills = document.getElementById('skills').value;
+      
+      // Update preview area
+      document.getElementById('previewName').textContent = name;
+      document.getElementById('previewPosition').textContent = position;
+      document.getElementById('previewAddress').innerHTML = address.replace(/\n/g, '<br>');
+      document.getElementById('previewPhone').textContent = phone;
+      document.getElementById('previewEmail').textContent = email;
+      document.getElementById('previewReference').innerHTML = reference.replace(/\n/g, '<br>');
+      
+      // Process work experience (each line: Company | Period | Description)
+      const workContainer = document.getElementById('previewWorkExp');
+      workContainer.innerHTML = '';
+      workExp.split('\n').forEach(line => {
+        if(line.trim()){
+          const parts = line.split('|');
+          const company = parts[0] ? parts[0].trim() : '';
+          const period = parts[1] ? parts[1].trim() : '';
+          const desc = parts[2] ? parts[2].trim() : '';
+          const item = document.createElement('div');
+          item.className = 'item';
+          item.innerHTML = `<h3>${company}</h3>
+                            <div class="date">${period}</div>
+                            <p>${desc}</p>`;
+          workContainer.appendChild(item);
+        }
+      });
+      
+      // Process education (each line: School | Period | Degree/Description)
+      const eduContainer = document.getElementById('previewEducation');
+      eduContainer.innerHTML = '';
+      education.split('\n').forEach(line => {
+        if(line.trim()){
+          const parts = line.split('|');
+          const school = parts[0] ? parts[0].trim() : '';
+          const period = parts[1] ? parts[1].trim() : '';
+          const desc = parts[2] ? parts[2].trim() : '';
+          const item = document.createElement('div');
+          item.className = 'item';
+          item.innerHTML = `<h3>${school}</h3>
+                            <div class="date">${period}</div>
+                            <p>${desc}</p>`;
+          eduContainer.appendChild(item);
+        }
+      });
+      
+      // Process skills (comma-separated)
+      const skillsContainer = document.getElementById('previewSkills');
+      skillsContainer.innerHTML = '';
+      skills.split(',').forEach(skill => {
+        if(skill.trim()){
+          const span = document.createElement('div');
+          span.className = 'skill';
+          span.textContent = skill.trim();
+          skillsContainer.appendChild(span);
+        }
+      });
+      
+      // Show resume preview and scroll to it
+      document.getElementById('resumePreview').style.display = 'flex';
+      document.getElementById('resumePreview').scrollIntoView({ behavior: 'smooth' });
+    });
+  
+    document.getElementById('downloadBtn').addEventListener('click', function () {
+      const element = document.getElementById('resumePreview');
+      const opt = {
+        margin:       0,
+        filename:     'resume.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+    
+document.getElementById('downloadBtn').addEventListener('click', function () {
+  const resume = document.getElementById('resumePreview');
+  resume.style.display = 'flex';
+  setTimeout(() => {
+    const opt = {
+      margin:       0,
+      filename:     'resume.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(resume).save();
+  }, 300);
+});
+
+document.getElementById('downloadBtn').addEventListener('click', function () {
+  const resume = document.getElementById('resumePreview');
+  resume.style.display = 'flex';
+
+  const img = document.getElementById('profileImg');
+  const nameInput = document.getElementById("name").value.trim().replace(/\s+/g, "-");
+  const filename = nameInput ? nameInput + "-Resume.pdf" : "resume.pdf";
+
+  function exportToPDF() {
+    html2canvas(resume).then(canvas => {
+      const imgData = canvas.toDataURL("image/png");
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF("p", "pt", "a4");
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const ratio = canvas.width / canvas.height;
+      const pdfHeight = pageWidth / ratio;
+      pdf.addImage(imgData, "PNG", 0, 0, pageWidth, pdfHeight);
+      pdf.save(filename);
+    }).catch(err => {
+      alert("导出 PDF 时出错：" + err.message);
+    });
+  }
+
+  if (img && !img.complete) {
+    img.onload = exportToPDF;
+    img.onerror = () => alert("头像图片加载失败，请更换其他文件名或使用 JPG/PNG 格式图片");
+  } else {
+    exportToPDF();
+  }
+});
+</script>
+</body>
+</html>
