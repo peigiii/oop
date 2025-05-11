@@ -1,0 +1,478 @@
+[
+    {
+        "level": 1,
+        "questions": [
+            {
+                "question": "What is the correct way to print \"Hello,World!\" in Java?",
+                "options": [
+                    "System.print(\"Hello,World!\");",
+                    "echo \"Hello,World!\";",
+                    "System.out.println(\"Hello,World!\");",
+                    "print(\"Hello,World!\");"
+                ],
+                "answer": "c"
+            },
+            {
+                "question": "How do you write a single-line comment in Java?",
+                "options": [
+                    "<!-- This is a comment -->",
+                    "// This is a comment",
+                    "/* This is a comment */",
+                    "# This is a comment"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "Which of the following declares an integer variable in Java?",
+                "options": [
+                    "int x = 10;",
+                    "x = 10;",
+                    "integer x = 10;",
+                    "var x = 10;"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "What is the correct file extension for Java source files?",
+                "options": [
+                    ".java",
+                    ".jav",
+                    ".class",
+                    ".j"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "Which keyword is used to define a class in Java?",
+                "options": [
+                    "define",
+                    "class",
+                    "struct",
+                    "object"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "What is the default value of an int variable in Java?",
+                "options": [
+                    "0",
+                    "null",
+                    "undefined",
+                    "1"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "Which method is called when an object is created?",
+                "options": [
+                    "main()",
+                    "constructor",
+                    "static method",
+                    "class method"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "What is used to store multiple values in a single variable?",
+                "options": [
+                    "Array",
+                    "Variable",
+                    "Function",
+                    "Loop"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "What is the correct way to create an object in Java?",
+                "options": [
+                    "new ClassName();",
+                    "ClassName();",
+                    "object.create(ClassName);",
+                    "ClassName.new();"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "Which statement is used to exit a loop in Java?",
+                "options": [
+                    "stop;",
+                    "break;",
+                    "exit;",
+                    "return;"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "What is encapsulation in Java?",
+                "options": [
+                    "Hiding data and providing controlled access through methods",
+                    "Using loops to repeat code",
+                    "A feature that allows multiple inheritance",
+                    "A way to declare a method"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "Which statement about method overloading is correct?",
+                "options": [
+                    "Overloaded methods must have the same parameter list",
+                    "Overloaded methods must have different parameter lists",
+                    "Overloaded methods must have different return types",
+                    "Overloaded methods must belong to different classes"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "Which access modifier makes a variable accessible only within the same package?",
+                "options": [
+                    "public",
+                    "private",
+                    "protected",
+                    "(default)(no modifier)"
+                ],
+                "answer": "d"
+            },
+            {
+                "question": "What is the purpose of the 'this' keyword in Java?",
+                "options": [
+                    "It refers to the current object",
+                    "It refers to the parent class",
+                    "It is used to call static methods",
+                    "It is used to define a new object"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "Which statement about constructors is true?",
+                "options": [
+                    "A constructor must have a void return type",
+                    "A constructor can have a different name than the class",
+                    "A constructor initializes an object when it is created",
+                    "A constructor cannot have parameters"
+                ],
+                "answer": "c"
+            },
+            {
+                "question": "What happens if an exception is not caught in Java?",
+                "options": [
+                    "The program ignores it and continues running",
+                    "The program stops execution and prints an error message",
+                    "The exception is automatically fixed",
+                    "The program restarts"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "Which of the following is true about ArrayList in Java?",
+                "options": [
+                    "ArrayList has a fixed size",
+                    "ArrayList allows dynamic resizing",
+                    "ArrayList only stores primitive data types",
+                    "ArrayList is faster than arrays in all cases"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "What is true about static methods in Java?",
+                "options": [
+                    "Static methods belong to the class rather than an instance",
+                    "Static methods can only be called from other static methods",
+                    "Static methods can access instance variables",
+                    "Static methods must have the same name as the class"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "Which keyword is used in Java for inheritance?",
+                "options": [
+                    "extends",
+                    "inherits",
+                    "implements",
+                    "super"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "What is the key difference between an interface and an abstract class?",
+                "options": [
+                    "An interface can have constructors, but an abstract class cannot",
+                    "An interface cannot have method implementations before Java 8",
+                    "An abstract class cannot have instance variables",
+                    "An interface allows multiple inheritance, but an abstract class does not"
+                ],
+                "answer": "b"
+            }
+        ]
+    },
+    {
+        "level": 2,
+        "questions": [
+            {
+                "question": "What will be the output of the following Java code?",
+                "image": "javaq21.png",
+                "options": [
+                    "JavaProgramming",
+                    "Java Programming",
+                    "Java + Programming",
+                    "Error"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "What is the output of the following Java code?",
+                "image": "javaq22.png",
+                "options": [
+                    "1 2 3",
+                    "1 2 3 4",
+                    "1 1 1",
+                    "2 3 4"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "Which method signature correctly overrides the following method?",
+                "image": "javaq23.png",
+                "options": [
+                    "public void display() { }",
+                    "private void display() { }",
+                    "public int display() { return 0; }",
+                    "void display () { }"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "What is the expected output of the following code?",
+                "image": "javaq24.png",
+                "options": [
+                    "1",
+                    "1.66",
+                    "2",
+                    "Error: Division by zero"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "What will be the output of the following Java code?",
+                "image": "javaq25.png",
+                "options": [
+                    "HelloWorld",
+                    "Hello World",
+                    "Error: Incompatible types",
+                    "Hello"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "What will be the output of the following Java code?",
+                "image": "javaq26.png",
+                "options": [
+                    "2",
+                    "2.0",
+                    "2.5",
+                    "Error"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "What is the output of the following Java code?",
+                "image": "javaq27.png",
+                "options": [
+                    "1 2",
+                    "1 2 3",
+                    "1 2 3 4",
+                    "Error: Infinite loop"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "What will the following code output?",
+                "image": "javaq28.png",
+                "options": [
+                    "4",
+                    "ArrayIndexOutOfBoundsException",
+                    "3",
+                    "Error: Null pointer exception"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "What is the expected output of this Java code?",
+                "image": "javaq29.png",
+                "options": [
+                    "3",
+                    "4",
+                    "5",
+                    "Error: IndexOutOfBoundsException"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "What will the following Java program output?",
+                "image": "javaq210.png",
+                "options": [
+                    "3",
+                    "3.0",
+                    "3.5",
+                    "Error"
+                ],
+                "answer": "c"
+            },
+            {
+                "question": "What is the output of the following Java code?",
+                "image": "javaq211.png",
+                "options": [
+                    "0 1 2",
+                    "0 1 2 3",
+                    "0 1 2 3 4",
+                    "Error: Infinite loop"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "What will be the output of the following Java code?",
+                "image": "javaq212.png",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "Error"
+                ],
+                "answer": "c"
+            },
+            {
+                "question": "What will be the output of the following Java code?",
+                "image": "javaq213.png",
+                "options": [
+                    "True",
+                    "False",
+                    "Error",
+                    "Null"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "What is the expected output of the following Java code?",
+                "image": "javaq214.png",
+                "options": [
+                    "Progra",
+                    "Program",
+                    "Programmin",
+                    "Progr"
+                ],
+                "answer": "d"
+            },
+            {
+                "question": "What is the output of the following Java code?",
+                "image": "javaq215.png",
+                "options": [
+                    "World",
+                    "Hello",
+                    "Error",
+                    "No output"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "What is the output of the following Java code?",
+                "image": "javaq216.png",
+                "options": [
+                    "10",
+                    "20",
+                    "30",
+                    "ArrayIndexOutOfBoundsException"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "What is the expected output of the following Java code?",
+                "image": "javaq217.png",
+                "options": [
+                    "Java",
+                    "Java Programming",
+                    "Error",
+                    "Java Programming Java"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "What is the expected output of the following code?",
+                "image": "javaq218.png",
+                "options": [
+                    "35",
+                    "23",
+                    "12",
+                    "17"
+                ],
+                "answer": "b"
+            },
+            {
+                "question": "What is the output of the following Java code?",
+                "image": "javaq219.png",
+                "options": [
+                    "10 8 6 4 2",
+                    "10 8 6 4 2 1",
+                    "10 9 8 7 6 5 4 3 2 1",
+                    "10 5"
+                ],
+                "answer": "a"
+            },
+            {
+                "question": "What is the expected output of the following Java code?",
+                "image": "javaq220.png",
+                "options": [
+                    "P",
+                    "p",
+                    "r",
+                    "Error"
+                ],
+                "answer": "a"
+            }
+        ]
+    },
+    {
+        "level": 3,
+        "questions": [
+            {
+                "question": "Write a Java program that calculates the factorial of a given number using recursion.",
+                "expected_output_image": "javaq31.png",
+                "inputAnswer": true,
+                "answer": "User provided Java code solution"
+            },
+            {
+                "question": "Write a Java program to check whether a given number is prime or not.",
+                "expected_output_image": [
+                    "javaq32.1.png",
+                    "javaq32.2.png"
+                ],
+                "inputAnswer": true,
+                "answer": "User provided Java code solution"
+            },
+            {
+                "question": "Write a Java program that sorts an array of integers in ascending order using the Bubble Sort algorithm.",
+                "expected_output_image": "javaq33.png",
+                "inputAnswer": true,
+                "answer": "User provided Java code solution"
+            },
+            {
+                "question": "Create a simple banking system where a user can perform the following operations: View balance, Deposit money, Withdraw money, Transfer money to another account",
+                "inputAnswer": true,
+                "answer": "User provided Java code solution"
+            },
+            {
+                "question": "Create a library management system that allows: Adding books to the library, Viewing available books, Borrowing books, Returning books",
+                "inputAnswer": true,
+                "answer": "User provided Java code solution"
+            },
+            {
+                "question": "Design and implement a TodoList application that allows users to: Add new tasks, View all tasks, Mark tasks as completed, Delete tasks",
+                "inputAnswer": true,
+                "answer": "User provided Java code solution"
+            },
+            {
+                "question": "Design and implement a StudentGradingSystem that allows teachers to: Add a student with their name and grades, View student details, Display all students sorted by average grade, Find highest and lowest average grade",
+                "inputAnswer": true,
+                "answer": "User provided Java code solution"
+            }
+        ]
+    }
+]

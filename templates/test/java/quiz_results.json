@@ -1,0 +1,87 @@
+[
+    {
+        "level": "java level 1",
+        "answers": [
+            {
+                "question": "What is the correct way to print \"Hello,World!\" in Java?",
+                "answer": "d"
+            },
+            {
+                "question": "How do you write a single-line comment in Java?",
+                "answer": "d"
+            },
+            {
+                "question": "Which of the following declares an integer variable in Java?",
+                "answer": "d"
+            },
+            {
+                "question": "What is the correct file extension for Java source files?",
+                "answer": "d"
+            },
+            {
+                "question": "Which keyword is used to define a class in Java?",
+                "answer": "d"
+            },
+            {
+                "question": "What is the default value of an int variable in Java?",
+                "answer": "d"
+            },
+            {
+                "question": "Which method is called when an object is created?",
+                "answer": "d"
+            },
+            {
+                "question": "What is used to store multiple values in a single variable?",
+                "answer": "d"
+            },
+            {
+                "question": "What is the correct way to create an object in Java?",
+                "answer": "d"
+            },
+            {
+                "question": "Which statement is used to exit a loop in Java?",
+                "answer": "d"
+            },
+            {
+                "question": "What is encapsulation in Java?",
+                "answer": "d"
+            },
+            {
+                "question": "Which statement about method overloading is correct?",
+                "answer": "d"
+            },
+            {
+                "question": "Which access modifier makes a variable accessible only within the same package?",
+                "answer": "d"
+            },
+            {
+                "question": "What is the purpose of the 'this' keyword in Java?",
+                "answer": "d"
+            },
+            {
+                "question": "Which statement about constructors is true?",
+                "answer": "d"
+            },
+            {
+                "question": "What happens if an exception is not caught in Java?",
+                "answer": "d"
+            },
+            {
+                "question": "Which of the following is true about ArrayList in Java?",
+                "answer": "d"
+            },
+            {
+                "question": "What is true about static methods in Java?",
+                "answer": "d"
+            },
+            {
+                "question": "Which keyword is used in Java for inheritance?",
+                "answer": "d"
+            },
+            {
+                "question": "What is the key difference between an interface and an abstract class?",
+                "answer": "d"
+            }
+        ]
+    }
+]
