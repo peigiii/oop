@@ -145,4 +145,3 @@ if (!isset($_SESSION['user_id'])) {
     <script src="quiz.js?v=<?= time() ?>"></script>
 </body>
 </html>
-

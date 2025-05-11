@@ -1,0 +1,9 @@
+﻿skill_category,question_text,question_image,option_a,option_a_image,option_b,option_b_image,option_c,option_c_image,option_d,option_d_image,correct_option,TYPE,subjective_answer
+python_level_3,Write a Python function to calculate the factorial of a given number using recursion.,uploads/images/pythonq31.png,,,,,,,,,,subjective,
+python_level_3,Write a Python program to find the maximum value in a list without using the built-in max() function.,uploads/images/pythonq32.png,,,,,,,,,,subjective,
+python_level_3,Create a Python script to read a CSV file and print each row in the file.,uploads/images/pythonq33.png,,,,,,,,,,subjective,
+python_level_3,Write a Python function that takes a list of integers and returns the sum of all even numbers in the list.,uploads/images/pythonq34.png,,,,,,,,,,subjective,
+python_level_3,Write a Python program to reverse a string without using built-in functions.,uploads/images/pythonq35.png,,,,,,,,,,subjective,
+python_level_3,Create a Python script to read a text file and count the number of words.,uploads/images/pythonq36.png,,,,,,,,,,subjective,
+python_level_3,Write a Python function to merge two dictionaries.,uploads/images/pythonq37.png,,,,,,,,,,subjective,
+python_level_3,Develop a Python program to find the longest common prefix from a list of strings.,uploads/images/pythonq38.png,,,,,,,,,,subjective,
