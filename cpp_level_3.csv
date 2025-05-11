@@ -1,9 +1,0 @@
-﻿skill_category,question_text,question_image,option_a,option_a_image,option_b,option_b_image,option_c,option_c_image,option_d,option_d_image,correct_option,TYPE,subjective_answer
-cpp_level_3,Write a C++ program that takes an integer as input and prints the square of that number.,uploads/images/cppq31.png,,,,,,,,,,subjective,
-cpp_level_3,Write a C++ program that reads three numbers and prints their sum.,uploads/images/cppq32.png,,,,,,,,,,subjective,
-cpp_level_3,Write a C++ program that checks if a number is prime or not.,"uploads/images/cppq33.1.png,uploads/images/cppq33.2.png",,,,,,,,,,subjective,
-cpp_level_3,Write a C++ program that reverses a given string.,uploads/images/cppq34.png,,,,,,,,,,subjective,
-cpp_level_3,"Write a C++ program to implement a class Matrix that can perform matrix addition, subtraction, and multiplication.","uploads/images/cppq35.1.png,uploads/images/cppq35.2.png",,,,,,,,,,subjective,
-cpp_level_3,Write a C++ program to implement a Dynamic Array class with various operations.,uploads/images/cppq36.png,,,,,,,,,,subjective,
-cpp_level_3,Write a C++ program that implements a Student Management System.,uploads/images/cppq37.png,,,,,,,,,,subjective,
-cpp_level_3,Write a C++ program that implements a Simple Bank System.,uploads/images/cppq38.png,,,,,,,,,,subjective,
