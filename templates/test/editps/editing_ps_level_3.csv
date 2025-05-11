@@ -1,0 +1,8 @@
+﻿skill_category,question_text,question_image,option_a,option_a_image,option_b,option_b_image,option_c,option_c_image,option_d,option_d_image,correct_option,TYPE,subjective_answer
+editing_ps_level_3,"You're given a high-resolution portrait that needs both colour correction and retouching for a magazine cover. Outline your five-step structured workflow, specifying for each step: Tool or Feature / Purpose / Non destructive Technique.",,,,,,,,,,,subjective,,
+editing_ps_level_3,Background Replacement Workflow: Replace the sky in a landscape photo while preserving foreground details. Provide five-step structured workflow.,,,,,,,,,,,subjective,,
+editing_ps_level_3,Frequency Separation for Skin Retouching: Smooth skin on a portrait without losing texture. Outline your five-step workflow.,,,,,,,,,,,subjective,,
+editing_ps_level_3,"Magazine Cover Redesign: Redesign an existing magazine cover for a modern audience. Requirements include adjustment layers, masked portrait with effects, and typographic hierarchy. Upload your files.",,,,,,,,,,,subjective,,
+editing_ps_level_3,"Cinematic Colour Grade: Apply film-style grading on a RAW still. Use Camera Raw Smart Filter, Gradient Maps or LUTs, and light effects. Upload your files.",,,,,,,,,,,subjective,,
+editing_ps_level_3,"Product Mock Up Composite: Composite a product shot onto a lifestyle background. Use precise masking, tone matching, and realistic shadows. Upload your files.",,,,,,,,,,,subjective,,
+editing_ps_level_3,"Surreal Photo Manipulation: Merge at least three photos into a surreal scene. Use Smart Objects, seamless blending, and creative brushes. Upload your files.",,,,,,,,,,,subjective,,
