@@ -65,4 +65,4 @@ jobs:
           app-name: 'skillsphere'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6FA72760AA394810AD189C63B54E196D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_487355D7B2A241AFA430C6C18F09A7D7 }}
