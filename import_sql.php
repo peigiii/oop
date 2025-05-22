@@ -4,7 +4,7 @@ $dbname = "skillsphere";
 $username = "peiyin5917@skillspheredb";
 $password = "0917Peiyin.";  // ← 请替换成你自己的密码
 
-// 创建连接
+// 创建连接，3306 是默认 MySQL 端口
 $conn = new mysqli($host, $username, $password, $dbname, 3306);
 
 // 检查连接
@@ -20,16 +20,16 @@ if (!file_exists($sqlFile)) {
 
 $sqlContent = file_get_contents($sqlFile);
 
-// 关闭多语句安全检查
-$conn->multi_query($sqlContent);
+if ($conn->multi_query($sqlContent)) {
+    do {
+        if ($result = $conn->store_result()) {
+            $result->free();
+        }
+    } while ($conn->more_results() && $conn->next_result());
+    echo "✅ 数据导入成功！";
+} else {
+    die("导入失败: " . $conn->error);
+}
 
-do {
-    // 清空结果
-    if ($result = $conn->store_result()) {
-        $result->free();
-    }
-} while ($conn->next_result());
-
-echo "✅ 数据导入成功！";
 $conn->close();
 ?>
