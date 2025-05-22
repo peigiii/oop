@@ -18,4 +18,4 @@ jobs:
       with:
         app-name: skillsphere
         publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
-        package: ./templates
+        package: .
