@@ -2,7 +2,7 @@
 $host = 'skillspheredb.mysql.database.azure.com';
 $username = 'peiyin5917@skillspheredb';
 $password = '0917Peiyin.';  // ⚠️ 把这行换成你真实密码
-$dbname = 'myappdb';
+$dbname = 'skillsphere';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $pass);
