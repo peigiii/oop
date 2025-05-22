@@ -58,7 +58,7 @@ body {
       <span onclick="window.location.href='/oop/templates/notification.php'" style="cursor:pointer;">🔔</span>
       <span onclick="window.location.href='/oop/templates/mail.php'" style="cursor:pointer;">📧</span>
       <span onclick="window.location.href='/oop/templates/my_favorites.php'" style="cursor:pointer;">⭐</span>
-      <span onclick="window.location.href='/oop/templates/main.php'" style="cursor:pointer;">🏠</span>
+      <span onclick="window.location.href='/oop/templates/index.php'" style="cursor:pointer;">🏠</span>
       <span onclick="window.location.href='/oop/templates/profile.php'" style="cursor:pointer;">👤</span>
     </div>
 
