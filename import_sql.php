@@ -2,7 +2,7 @@
 $host = "skillspheredb.mysql.database.azure.com";
 $dbname = "skillsphere";
 $username = "peiyin5917@skillspheredb";
-$password = "0917Peiyin.";  // 请替换成你的密码
+$password = "0917CPYcpy";  // 请替换成你的密码
 
 // 连接数据库
 try {
