@@ -2,7 +2,7 @@
 $host = "skillspheredb.mysql.database.azure.com";
 $db = "skillsphere"; // 替换为你的数据库名
 $user = "peiyin5917@skillspheredb";
-$pass = "你的真实密码"; // ⚠️ 别忘了替换！
+$pass = "0917Peiyin."; // ⚠️ 别忘了替换！
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
