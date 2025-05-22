@@ -9,5 +9,7 @@ $cfg['Servers'][$i]['auth_type'] = 'cookie';  // 登录方式
 $cfg['Servers'][$i]['host'] = 'skillspheredb.mysql.database.azure.com';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
+$cfg['CheckConfigurationPermissions'] = false;
+
 ?>
 
