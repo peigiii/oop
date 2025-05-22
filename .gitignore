@@ -1,0 +1,14 @@
+# 防止上传导入脚本和 SQL 数据文件
+import_sql.php
+*.sql
+
+# 通用 PHP 项目忽略项
+vendor/
+.env
+*.log
+*.bak
+*.tmp
+.DS_Store
+.idea/
+*.swp
+*.swo
