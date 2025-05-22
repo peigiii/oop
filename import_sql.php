@@ -1,48 +1,35 @@
 <?php
 $host = "skillspheredb.mysql.database.azure.com";
-$db = "skillsphere"; // 替换为你的数据库名
-$user = "peiyin5917@skillspheredb";
-$pass = "0917Peiyin."; // ⚠️ 别忘了替换！
+$dbname = "skillsphere";
+$username = "peiyin5917@skillspheredb";
+$password = "0917peiyin.";  // ← 请替换成你自己的密码
 
-$conn = new mysqli($host, $user, $pass, $db);
+// 创建连接
+$conn = new mysqli($host, $username, $password, $dbname, 3306);
+
+// 检查连接
 if ($conn->connect_error) {
-    die("❌ 数据库连接失败: " . $conn->connect_error);
+    die("连接失败: " . $conn->connect_error);
 }
 
-echo "<h3>✅ 成功连接数据库：$db</h3>";
-$sqlFile = "skillsphere.sql";
-
+// 读取 SQL 文件
+$sqlFile = 'skillsphere.sql';
 if (!file_exists($sqlFile)) {
-    die("❌ 未找到 skillsphere.sql 文件，请确认它和本文件在同一目录。");
+    die("找不到 SQL 文件: $sqlFile");
 }
 
-$query = '';
-$lines = file($sqlFile);
-foreach ($lines as $line) {
-    $line = trim($line);
-    if ($line == '' || strpos($line, '--') === 0 || strpos($line, '/*') === 0) continue;
+$sqlContent = file_get_contents($sqlFile);
 
-    $query .= $line;
-    if (substr($line, -1) == ';') {
-        if (!$conn->query($query)) {
-            echo "<div style='color:red;'>❌ 出错: " . htmlspecialchars($conn->error) . "<br><code>" . htmlspecialchars($query) . "</code></div><hr>";
-        } else {
-            echo "<div style='color:green;'>✅ 执行成功: <code>" . htmlspecialchars($query) . "</code></div><hr>";
-        }
-        $query = '';
+// 关闭多语句安全检查
+$conn->multi_query($sqlContent);
+
+do {
+    // 清空结果
+    if ($result = $conn->store_result()) {
+        $result->free();
     }
-}
+} while ($conn->next_result());
 
+echo "✅ 数据导入成功！";
 $conn->close();
-
-// 自动删除文件
-echo "<h3 style='color:blue;'>🎉 导入完成，尝试删除临时文件…</h3>";
-$deleted1 = @unlink(__FILE__); // 删除 import_sql.php 自身
-$deleted2 = @unlink("skillsphere.sql");
-
-if ($deleted1 && $deleted2) {
-    echo "<strong style='color:green;'>✅ import_sql.php 和 skillsphere.sql 已成功删除</strong>";
-} else {
-    echo "<strong style='color:orange;'>⚠️ 自动删除失败，请手动删除 import_sql.php 和 skillsphere.sql</strong>";
-}
 ?>
