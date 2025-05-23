@@ -1,9 +1,9 @@
 <?php
 // db.php
-$host = 'localhost';
-$dbname = 'skillsphere_db';
-$user = 'root';
-$pass = '';
+$host = 'skillspheredb.mysql.database.azure.com';  // Azure MySQL 主机名
+$dbname = 'skillspheredb';                        // Azure 数据库名
+$user = 'peiyin5917@skillspheredb';               // Azure 数据库用户名
+$pass = 'P12345678.';                                // Azure 密码
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $pass);
